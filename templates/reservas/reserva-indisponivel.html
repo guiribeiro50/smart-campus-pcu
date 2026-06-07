@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+</head>
+  <body>
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <div class="modal-icon-wrap" id="modal-icon-bg-unavail">
+          <i id="modal-icon-unavail" data-lucide="placeholder"></i>
+        </div>
+        <div>
+          <h3 class="modal-title" id="modal-title-unavail-text">
+            Sem unidades disponíveis
+          </h3>
+          <p class="modal-sub">Nenhuma unidade disponível de momento</p>
+        </div>
+      </div>
+      <button class="modal-close" onclick="fecharModalBtn()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="modal-unavailable">
+      <div class="unavailable-icon" id="center-icon-bg-unavail">
+        <i
+          id="modal-icon-center-unavail"
+          data-lucide="placeholder"
+          style="width: 32px; height: 32px"
+        ></i>
+      </div>
+      <p class="unavailable-msg">
+        De momento não existem
+        <strong id="unavail-vehicle-label">veículos</strong> disponíveis para
+        reserva.
+      </p>
+      <p class="unavailable-hint">
+        Tente novamente mais tarde ou escolha outro tipo de transporte.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" style="width: 100%" onclick="fecharModalBtn()">
+        Fechar
+      </button>
+    </div>
+  </body>
+</html>
+

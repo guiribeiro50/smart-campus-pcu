@@ -1,0 +1,54 @@
+.modal-est {
+  padding: 20px 24px 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.est-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.est-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.est-item-codigo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.est-item-codigo svg {
+  width: 15px;
+  height: 15px;
+  color: #6b7280;
+}
+
+.est-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: #16a34a;
+  background: #dcfce7;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.est-vazio {
+  font-size: 14px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 24px 0 16px;
+  margin: 0;
+}

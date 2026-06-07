@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt">
+  <meta charset="UTF-8" />
+<body>
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <div class="modal-icon-wrap" id="modal-icon-bg">
+          <i id="modal-icon-main" data-lucide="placeholder"></i>
+        </div>
+        <div>
+          <h3 class="modal-title" id="modal-title-text">Reservar</h3>
+          <p class="modal-sub" id="modal-sub-text">X unidades disponíveis</p>
+        </div>
+      </div>
+      <button class="modal-close" onclick="fecharModalBtn()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <form id="form-reserva-ativa">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="reserva-data">Data</label>
+          <div class="input-wrap">
+            <i data-lucide="calendar" class="input-icon"></i>
+            <input type="date" id="reserva-data" class="form-input" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="reserva-inicio">Hora Início</label>
+            <div class="input-wrap">
+              <i data-lucide="clock" class="input-icon"></i>
+              <input
+                type="time"
+                id="reserva-inicio"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reserva-fim">Hora Fim</label>
+            <div class="input-wrap">
+              <i data-lucide="clock" class="input-icon"></i>
+              <input type="time" id="reserva-fim" class="form-input" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" onclick="fecharModalBtn()">
+          Cancelar
+        </button>
+        <button type="button" class="btn-confirm" id="btn-submit-reserva">
+          Confirmar Reserva
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
+

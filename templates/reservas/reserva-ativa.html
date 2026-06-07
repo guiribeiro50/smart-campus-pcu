@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <div class="modal-icon-wrap" id="modal-icon-bg-ativa">
+          <i id="modal-icon-ativa" data-lucide="placeholder"></i>
+        </div>
+        <div>
+          <h3 class="modal-title" id="modal-title-ativa-text">
+            Reserva já ativa
+          </h3>
+          <p class="modal-sub">Já tem uma reserva em curso</p>
+        </div>
+      </div>
+      <button class="modal-close" onclick="fecharModalBtn()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="modal-unavailable">
+      <div class="unavailable-icon">
+        <i
+          data-lucide="alert-circle"
+          style="width: 32px; height: 32px; color: #f59e0b"
+        ></i>
+      </div>
+      <p class="unavailable-msg">
+        Já tem uma reserva de veículo ativa. Não é possível efetuar uma nova reserva enquanto a reserva atual não terminar.
+      </p>
+      <p class="unavailable-hint">
+        Aguarde o término da reserva atual ou cancele-a antes de reservar outro veículo.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" style="width: 100%" onclick="fecharModalBtn()">
+        Fechar
+      </button>
+    </div>
+  </body>
+</html>
+

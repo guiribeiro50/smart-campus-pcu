@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitorização IoT | PCU - UPT</title>
+  <link rel="stylesheet" href="../../assets/css/iot.css">
+</head>
+
+<body>
+  <!-- Ícones internos: não precisam de JavaScript -->
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="building" viewBox="0 0 24 24">
+      <path d="M5 21V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5V21"/>
+      <path d="M15 9h3a1 1 0 0 1 1 1v11M3 21h18M8 8h4M8 12h4M8 16h4"/>
+    </symbol>
+    <symbol id="grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1"/>
+      <rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/>
+      <rect x="14" y="14" width="7" height="7" rx="1"/>
+    </symbol>
+    <symbol id="wifi" viewBox="0 0 24 24">
+      <path d="M5 10a10 10 0 0 1 14 0M8.5 13.5a5 5 0 0 1 7 0M12 17h.01"/>
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="17" rx="2"/>
+      <path d="M7 2v4M17 2v4M3 9h18"/>
+    </symbol>
+    <symbol id="pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 24 24">
+      <path d="M20 4C11 4 5 8 5 13a5 5 0 0 0 6 5c5-1 8-6 9-14Z"/>
+      <path d="M4 21c2-5 6-8 12-10"/>
+    </symbol>
+    <symbol id="shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="plus" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M12 8v8M8 12h8"/>
+    </symbol>
+    <symbol id="users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-4M16 3a4 4 0 0 1 0 8"/>
+    </symbol>
+    <symbol id="gauge" viewBox="0 0 24 24">
+      <path d="M4 18a8 8 0 1 1 16 0M12 14l3-4M12 18h.01"/>
+    </symbol>
+    <symbol id="terminal" viewBox="0 0 24 24">
+      <path d="m4 17 6-5-6-5M12 19h8"/>
+    </symbol>
+    <symbol id="logout" viewBox="0 0 24 24">
+      <path d="M10 17l5-5-5-5M15 12H3M21 19V5a2 2 0 0 0-2-2h-6"/>
+    </symbol>
+    <symbol id="bell" viewBox="0 0 24 24">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M14 21h-4"/>
+    </symbol>
+    <symbol id="search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m20 20-4-4"/>
+    </symbol>
+    <symbol id="thermometer" viewBox="0 0 24 24">
+      <path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0Z"/>
+    </symbol>
+    <symbol id="wind" viewBox="0 0 24 24">
+      <path d="M4 8h11a3 3 0 1 0-3-3M4 12h16M4 16h11a3 3 0 1 1-3 3"/>
+    </symbol>
+    <symbol id="droplets" viewBox="0 0 24 24">
+      <path d="M8 3s-4 4-4 7a4 4 0 0 0 7 2M15 2s5 6 5 10a5 5 0 0 1-10 0"/>
+    </symbol>
+    <symbol id="zap" viewBox="0 0 24 24">
+      <path d="m13 2-9 12h8l-1 8 9-12h-8l1-8Z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="m8 12 2.5 2.5L16 9"/>
+    </symbol>
+    <symbol id="alert" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 8v5M12 16h.01"/>
+    </symbol>
+  </svg>
+
+  <aside class="sidebar">
+    <header class="brand">
+      <span class="brand-icon"><svg><use href="#building"></use></svg></span>
+      <div>
+        <strong>PCU - UPT</strong>
+        <small>Campus Inteligente</small>
+      </div>
+    </header>
+
+    <nav>
+      <h2>Menu Principal</h2>
+      <a href="../../dashboard.php"><svg><use href="#grid"></use></svg>Dashboard</a>
+      <a class="active" href="../../monitorizacao.php"><svg><use href="#wifi"></use></svg>Monitorização IoT</a>
+      <a href="#"><svg><use href="#calendar"></use></svg>Reservas</a>
+      <a href="#"><svg><use href="#pin"></use></svg>Mobilidade</a>
+      <a href="../../sustentabilidade.php"><svg><use href="#leaf"></use></svg>Sustentabilidade</a>
+
+      <h2 class="admin-title">Administração</h2>
+      <a href="#"><svg><use href="#shield"></use></svg>Controlo de Acessos</a>
+      <a href="#"><svg><use href="#plus"></use></svg>Registar Espaço</a>
+      <a href="#"><svg><use href="#users"></use></svg>Gestão Utilizadores</a>
+      <a href="../../sensores-listar.php"><svg><use href="#gauge"></use></svg>Gestão Sensores</a>
+      <a href="#"><svg><use href="#terminal"></use></svg>Terminal LSS</a>
+    </nav>
+
+    <footer class="sidebar-footer">
+      <div class="profile">
+        <span class="avatar">A</span>
+        <div><strong>Administrador Sistema</strong><small>admin@upt.pt</small></div>
+      </div>
+      <span class="role">Administrador</span>
+      <a class="logout" href="../../login.php"><svg><use href="#logout"></use></svg>Sair</a>
+    </footer>
+  </aside>
+
+  <main class="app">
+    <header class="topbar">
+      <svg><use href="#bell"></use></svg><span class="dot"></span>
+    </header>
+
+    <div class="content">
+      <header class="heading">
+        <h1>Centro de Monitorização IoT</h1>
+        <p>Monitorização em tempo real de sensores distribuídos pelo campus</p>
+        <small class="last-update" data-last-update>Última atualização: --:--:--</small>
+      </header>
+
+      <section class="summary-grid">
+        <article><h2>Total de Sensores</h2><strong data-summary-total>10 000</strong><p>Instalados no campus</p></article>
+        <article><h2>Sensores Ativos</h2><strong class="green" data-summary-active>9,847</strong><p data-summary-active-text>98.5% operacionais</p></article>
+        <article><h2>Alertas Críticos</h2><strong class="red" data-summary-critical>1</strong><p>Requerem atenção imediata</p></article>
+        <article><h2>Avisos</h2><strong class="orange" data-summary-warning>2</strong><p>Para monitorização</p></article>
+      </section>
+
+      <section class="filters">
+        <h2>Filtros</h2>
+        <div class="filters-grid">
+          <label><span>Edifício</span><select data-filter-building><option value="">Todos os Edifícios</option><option value="a">Edifício A</option><option value="b">Edifício B</option><option value="c">Edifício C</option></select></label>
+          <label><span>Tipo de Sensor</span><select data-filter-type><option value="">Todos os Tipos</option><option value="temperatura">Temperatura</option><option value="co2">Qualidade do Ar (CO₂)</option><option value="humidade">Humidade</option><option value="energia">Energia</option></select></label>
+          <label>
+            <span>Pesquisar</span>
+            <span class="search"><svg><use href="#search"></use></svg><input placeholder="ID ou localização..." data-filter-search></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="sensor-grid" data-sensor-grid>
+        <article class="sensor-card">
+          <header><span class="sensor-icon temperature"><svg><use href="#thermometer"></use></svg></span><div><h2>S-001</h2><p>Temperatura</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">22 <small>°C</small></strong><p>Local: <b>Sala 101</b></p><p>Edifício: <b>Edifício A</b></p><p>Piso: <b>1</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon temperature"><svg><use href="#thermometer"></use></svg></span><div><h2>S-002</h2><p>Temperatura</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">24 <small>°C</small></strong><p>Local: <b>Sala 202</b></p><p>Edifício: <b>Edifício A</b></p><p>Piso: <b>2</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon temperature"><svg><use href="#thermometer"></use></svg></span><div><h2>S-003</h2><p>Temperatura</p></div><span class="status warning"><svg><use href="#alert"></use></svg>Aviso</span></header>
+          <strong class="value">28 <small>°C</small></strong><p>Local: <b>Lab 2</b></p><p>Edifício: <b>Edifício C</b></p><p>Piso: <b>1</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon air"><svg><use href="#wind"></use></svg></span><div><h2>S-004</h2><p>Qualidade do Ar (CO₂)</p></div><span class="status critical"><svg><use href="#alert"></use></svg>Crítico</span></header>
+          <strong class="value">850 <small>ppm</small></strong><p>Local: <b>Sala 305</b></p><p>Edifício: <b>Edifício B</b></p><p>Piso: <b>3</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon air"><svg><use href="#wind"></use></svg></span><div><h2>S-005</h2><p>Qualidade do Ar (CO₂)</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">420 <small>ppm</small></strong><p>Local: <b>Biblioteca</b></p><p>Edifício: <b>Biblioteca</b></p><p>Piso: <b>2</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon air"><svg><use href="#wind"></use></svg></span><div><h2>S-006</h2><p>Qualidade do Ar (CO₂)</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">650 <small>ppm</small></strong><p>Local: <b>Sala 150</b></p><p>Edifício: <b>Edifício A</b></p><p>Piso: <b>1</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon humidity"><svg><use href="#droplets"></use></svg></span><div><h2>S-007</h2><p>Humidade</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">58 <small>%</small></strong><p>Local: <b>Sala 101</b></p><p>Edifício: <b>Edifício A</b></p><p>Piso: <b>1</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon humidity"><svg><use href="#droplets"></use></svg></span><div><h2>S-008</h2><p>Humidade</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">45 <small>%</small></strong><p>Local: <b>Lab 3</b></p><p>Edifício: <b>Edifício C</b></p><p>Piso: <b>2</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon humidity"><svg><use href="#droplets"></use></svg></span><div><h2>S-009</h2><p>Humidade</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">62 <small>%</small></strong><p>Local: <b>Auditório</b></p><p>Edifício: <b>Edifício B</b></p><p>Piso: <b>1</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon energy"><svg><use href="#zap"></use></svg></span><div><h2>S-010</h2><p>Energia</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">890 <small>kW</small></strong><p>Local: <b>Edifício A</b></p><p>Edifício: <b>Edifício A</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon energy"><svg><use href="#zap"></use></svg></span><div><h2>S-011</h2><p>Energia</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">650 <small>kW</small></strong><p>Local: <b>Edifício B</b></p><p>Edifício: <b>Edifício B</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+
+        <article class="sensor-card">
+          <header><span class="sensor-icon energy"><svg><use href="#zap"></use></svg></span><div><h2>S-012</h2><p>Energia</p></div><span class="status normal"><svg><use href="#check"></use></svg>Normal</span></header>
+          <strong class="value">420 <small>kW</small></strong><p>Local: <b>Edifício C</b></p><p>Edifício: <b>Edifício C</b></p><small>Atualizado: 17:11:56</small>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <a class="toast" href="../../alertas.php" aria-label="Abrir alertas dos sensores">
+    <svg><use href="#bell"></use></svg><strong>Notificações</strong>
+    <span class="red-count" data-toast-critical>1</span><span class="yellow-count" data-toast-warning>2</span>
+    <svg><use href="#bell"></use></svg>
+  </a>
+  <script src="../../assets/js/iot.js"></script>
+</body>
+</html>
+
+

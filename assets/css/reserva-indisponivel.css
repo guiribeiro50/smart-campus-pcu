@@ -1,0 +1,28 @@
+.modal-unavailable {
+  padding: 30px 24px 24px;
+  text-align: center;
+}
+
+.unavailable-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.unavailable-msg {
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.unavailable-hint {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0;
+}

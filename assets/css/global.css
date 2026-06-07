@@ -1,0 +1,459 @@
+body {
+  background: #f3f4f6;
+}
+
+.main-content {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 32px;
+  background: #f3f4f6;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a2e4a;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  color: #6b7a90;
+  margin-bottom: 24px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-stat {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.card-stat h3 {
+  font-size: 13px;
+  color: #6b7a90;
+  margin-bottom: 8px;
+}
+
+.card-stat span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2e4a;
+}
+
+.grid-acessos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #1a2e4a;
+}
+
+.acesso {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.acesso strong {
+  color: #1a2e4a;
+}
+
+.acesso p {
+  font-size: 13px;
+  color: #6b7a90;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dce3ee;
+  outline: none;
+  font-size: 14px;
+  background: #f9fbff;
+}
+
+input:focus, select:focus {
+  border-color: #1a2e4a;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1a2e4a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #243d5e;
+}
+
+
+
+.filtros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 12px;
+}
+
+.grid-salas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card-sala {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-sala h3 {
+  margin: 0;
+  color: #1a2e4a;
+}
+
+.card-sala p {
+  margin: 0;
+  color: #6b7a90;
+  font-size: 14px;
+}
+
+.card-sala span {
+  color: #6b7a90;
+  font-size: 13px;
+}
+
+.estado {
+  align-self: flex-end;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.estado.livre {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.estado.ocupada {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.card-sala button {
+  margin-top: auto;
+}
+
+.card-sala button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1200px) {
+  .grid-salas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .grid-salas {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.estado.disponivel {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.estado.ocupado {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.msg-form {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.msg-form.sucesso {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.msg-form.erro {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .gestao-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .gestao-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gestao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.gestao-grid > .card {
+  width: 100%;
+}
+
+.btn-delete {
+    background: #1a2e4a !important;
+    margin-top: 10px;
+}
+
+.btn-delete:hover {
+    background: #243d5e !important;
+}
+
+.btn-delete {
+    background: #1a2e4a !important;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-delete:hover {
+    background: #243d5e !important;
+}
+
+.msg-form {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.msg-form.sucesso {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.msg-form.erro {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.hidden {
+    display: none;
+}
+
+.acesso {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.acesso-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.utilizador {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.indicador.verde {
+    background: #22c55e;
+}
+
+.indicador.vermelho {
+    background: #ef4444;
+}
+
+.estado-acesso {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.estado-acesso.sucesso {
+    color: #16a34a;
+}
+
+.estado-acesso.erro {
+    color: #dc2626;
+}
+
+.acesso-info {
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.hora-acesso {
+    margin-top: 4px;
+    text-align: right;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+
+.novo-utilizador-btn,
+.novo-recurso-btn,
+.btn-modal-submit,
+.btn-confirm,
+.btn-permissoes-guardar,
+.btn-permissao-add,
+.btn-exec,
+.primary-button,
+.export-button,
+.refresh-button,
+.refresh-readings-button,
+form button[type="submit"]:not(.btn-icon):not(.tab-btn):not(.danger-button),
+.card-sala button[type="submit"],
+.btn-cancelar,
+.btn-reservar {
+  background: #1a2e4a !important;
+  background-color: #1a2e4a !important;
+  border-color: #1a2e4a !important;
+  color: #ffffff !important;
+}
+
+.novo-utilizador-btn:hover,
+.novo-recurso-btn:hover,
+.btn-modal-submit:hover,
+.btn-confirm:hover,
+.btn-permissoes-guardar:hover,
+.btn-permissao-add:hover,
+.btn-exec:hover,
+.primary-button:hover,
+.export-button:hover,
+.refresh-button:hover,
+.refresh-readings-button:hover,
+form button[type="submit"]:not(.btn-icon):not(.tab-btn):not(.danger-button):hover,
+.card-sala button[type="submit"]:hover,
+.btn-cancelar:hover,
+.btn-reservar:hover {
+  background: #243d5e !important;
+  background-color: #243d5e !important;
+  border-color: #243d5e !important;
+  color: #ffffff !important;
+}
+
+.danger-button {
+  background: #dc2626 !important;
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.danger-button:hover {
+  background: #b91c1c !important;
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+.btn-recusar {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #fecaca !important;
+  color: #dc2626 !important;
+}
+
+.btn-recusar:hover {
+  background: #fef2f2 !important;
+  background-color: #fef2f2 !important;
+}
+
+.btn-modal-cancel,
+.secondary-button {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+}
+
+.btn-modal-cancel:hover,
+.secondary-button:hover {
+  background: #f9fafb !important;
+  background-color: #f9fafb !important;
+  border-color: #9ca3af !important;
+  color: #111827 !important;
+}

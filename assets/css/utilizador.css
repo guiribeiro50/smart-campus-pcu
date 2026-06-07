@@ -1,0 +1,275 @@
+@import url("assets/css/dashboard.css");
+
+.user-dashboard-content {
+  max-width: 1350px;
+}
+
+.user-heading {
+  margin-bottom: 31px;
+}
+
+.user-heading h1 {
+  font-size: 32px;
+}
+
+.user-summary-grid,
+.user-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.user-summary-card {
+  min-height: 238px;
+  padding: 33px 32px 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: #fff;
+}
+
+.user-card-title,
+.user-card-main {
+  display: flex;
+  align-items: center;
+}
+
+.user-card-title {
+  gap: 14px;
+}
+
+.user-card-title svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.user-card-title h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.user-card-main {
+  gap: 14px;
+}
+
+.user-card-main strong {
+  font-size: 43px;
+  letter-spacing: -0.04em;
+}
+
+.user-summary-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.user-summary-card.rooms,
+.user-summary-card.parking,
+.user-summary-card.temperature {
+  color: var(--sidebar);
+}
+
+.user-summary-card.air {
+  color: #08a848;
+}
+
+.status-pill {
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 13px;
+  color: #078b3b;
+  background: #d9f8e3;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.status-pill svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.user-dashboard-grid {
+  margin-top: 31px;
+}
+
+.user-panel {
+  min-height: 420px;
+}
+
+.reservation-list,
+.occupancy-list {
+  margin-top: 29px;
+}
+
+.reservation-item {
+  min-height: 107px;
+  padding: 18px 19px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.reservation-item + .reservation-item {
+  margin-top: 17px;
+}
+
+.reservation-icon {
+  width: 62px;
+  height: 62px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--sidebar);
+  background: #eef0f4;
+}
+
+.reservation-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.reservation-item h3,
+.reservation-item p {
+  margin: 0;
+}
+
+.reservation-item h3 {
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+.reservation-item p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.reservation-item span:not(.reservation-icon) {
+  margin-top: 7px;
+  padding: 5px 14px;
+  display: inline-block;
+  border-radius: 10px;
+  color: #fff;
+  background: #4e5d73;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.occupancy-item + .occupancy-item {
+  margin-top: 26px;
+}
+
+.occupancy-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.occupancy-item strong,
+.occupancy-item span {
+  font-size: 18px;
+}
+
+.occupancy-item > div > span {
+  color: var(--muted);
+}
+
+.occupancy-item .progress-track {
+  height: 11px;
+  margin-top: 10px;
+}
+
+.user-notifications .warning-count {
+  margin-left: auto;
+}
+
+.user-notifications .danger-count + .warning-count {
+  margin-left: 0;
+}
+
+@media (max-width: 1220px) {
+  .user-summary-grid,
+  .user-dashboard-grid {
+    gap: 20px;
+  }
+
+  .user-summary-card {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 900px) {
+  .user-summary-grid,
+  .user-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .user-summary-card {
+    min-height: 170px;
+    padding: 22px 20px;
+  }
+
+  .user-card-title h2 {
+    font-size: 18px;
+  }
+
+  .user-card-main strong {
+    font-size: 35px;
+  }
+
+  .reservation-item {
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .reservation-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reservation-item h3 {
+    font-size: 17px;
+  }
+
+  .reservation-item p,
+  .occupancy-item strong,
+  .occupancy-item span {
+    font-size: 15px;
+  }
+}
+
+
+
+.app-shell { margin-left: 0 !important; flex: 1; min-width: 0; }

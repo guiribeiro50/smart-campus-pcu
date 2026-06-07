@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Painel de controlo da Plataforma Campus Universitário."
+    />
+    <title>Dashboard | PCU - UPT</title>
+   <link rel="stylesheet" href="../../assets/css/dashboard.css">
+  </head>
+
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-building" viewBox="0 0 24 24">
+        <path d="M5 21V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5V21" />
+        <path d="M15 9h2.5A1.5 1.5 0 0 1 19 10.5V21M3 21h18M8 8h4M8 12h4M8 16h4" />
+      </symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect width="7" height="7" x="3" y="3" rx="1" />
+        <rect width="7" height="7" x="14" y="3" rx="1" />
+        <rect width="7" height="7" x="3" y="14" rx="1" />
+        <rect width="7" height="7" x="14" y="14" rx="1" />
+      </symbol>
+      <symbol id="icon-wifi" viewBox="0 0 24 24">
+        <path d="M5 10a10 10 0 0 1 14 0M8.5 13.5a5 5 0 0 1 7 0M12 17h.01" />
+      </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <rect width="18" height="17" x="3" y="4" rx="2" />
+        <path d="M7 2v4M17 2v4M3 9h18" />
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 24 24">
+        <path d="M20 4C11 4 5.5 7.8 5.5 13.2A5.4 5.4 0 0 0 11 18.5C16.4 18.5 20 13 20 4Z" />
+        <path d="M4 21c2.2-5.3 6.2-8.4 11.7-10.3" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="icon-plus-square" viewBox="0 0 24 24">
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M12 8v8M8 12h8" />
+      </symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" />
+      </symbol>
+      <symbol id="icon-gauge" viewBox="0 0 24 24">
+        <path d="M4.5 18a8 8 0 1 1 15 0M12 14l3-4M12 18h.01" />
+      </symbol>
+      <symbol id="icon-terminal" viewBox="0 0 24 24">
+        <path d="m4 17 6-5-6-5M12 19h8" />
+      </symbol>
+      <symbol id="icon-logout" viewBox="0 0 24 24">
+        <path d="M10 17l5-5-5-5M15 12H3M21 19V5a2 2 0 0 0-2-2h-6" />
+      </symbol>
+      <symbol id="icon-bell" viewBox="0 0 24 24">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M14 21h-4" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="icon-warning" viewBox="0 0 24 24">
+        <path d="m21 19-8-14a1.15 1.15 0 0 0-2 0L3 19a1.15 1.15 0 0 0 1 1.7h16a1.15 1.15 0 0 0 1-1.7Z" />
+        <path d="M12 9v4M12 17h.01" />
+      </symbol>
+      <symbol id="icon-bolt" viewBox="0 0 24 24">
+        <path d="m13 2-9 12h8l-1 8 9-12h-8l1-8Z" />
+      </symbol>
+      <symbol id="icon-thermometer" viewBox="0 0 24 24">
+        <path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0Z" />
+      </symbol>
+      <symbol id="icon-droplets" viewBox="0 0 24 24">
+        <path d="M8 3.2S4.5 7 4.5 9.4A3.5 3.5 0 0 0 11 11M14.5 2S20 8 20 12a5.5 5.5 0 0 1-11 0" />
+      </symbol>
+      <symbol id="icon-trending-down" viewBox="0 0 24 24">
+        <path d="m3 7 6 6 4-4 8 8M15 17h6v-6" />
+      </symbol>
+    </svg>
+
+    <aside class="sidebar" id="sidebar">
+      <header class="sidebar-brand">
+        <span class="sidebar-logo">
+          <svg aria-hidden="true"><use href="#icon-building"></use></svg>
+        </span>
+        <span>
+          <strong>PCU - UPT</strong>
+          <small>Campus Inteligente</small>
+        </span>
+      </header>
+
+      <div class="sidebar-navigation">
+        <nav aria-label="Menu principal">
+          <h2>Menu Principal</h2>
+          <a class="nav-link active" href="../../dashboard.php">
+            <svg aria-hidden="true"><use href="#icon-grid"></use></svg>
+            <span>Dashboard</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-wifi"></use></svg>
+            <span>Monitorização IoT</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            <span>Reservas</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-pin"></use></svg>
+            <span>Mobilidade</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-leaf"></use></svg>
+            <span>Sustentabilidade</span>
+          </a>
+        </nav>
+
+        <nav aria-label="Administração">
+          <h2>Administração</h2>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-shield"></use></svg>
+            <span>Controlo de Acessos</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-plus-square"></use></svg>
+            <span>Registar Espaço</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-users"></use></svg>
+            <span>Gestão Utilizadores</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-gauge"></use></svg>
+            <span>Gestão Sensores</span>
+          </a>
+          <a class="nav-link" href="#">
+            <svg aria-hidden="true"><use href="#icon-terminal"></use></svg>
+            <span>Terminal LSS</span>
+          </a>
+        </nav>
+      </div>
+
+      <footer class="sidebar-footer">
+        <div class="profile">
+          <span class="profile-avatar">A</span>
+          <span>
+            <strong>Administrador Sistema</strong>
+            <small>admin@upt.pt</small>
+          </span>
+        </div>
+        <span class="profile-role">Administrador</span>
+        <a class="logout-link" href="../../login.php">
+          <svg aria-hidden="true"><use href="#icon-logout"></use></svg>
+          <span>Sair</span>
+        </a>
+      </footer>
+    </aside>
+
+    <div class="sidebar-overlay" data-sidebar-close></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="menu-button" type="button" data-sidebar-open aria-label="Abrir menu">
+          <svg aria-hidden="true"><use href="#icon-menu"></use></svg>
+        </button>
+        <button
+          class="notifications-button"
+          type="button"
+          data-notifications-toggle
+          aria-label="Abrir notificações"
+          aria-expanded="false"
+        >
+          <svg aria-hidden="true"><use href="#icon-bell"></use></svg>
+          <span class="notification-dot"></span>
+        </button>
+      </header>
+
+      <main class="dashboard-content">
+        <header class="page-heading">
+          <h1>Painel de Controlo</h1>
+          <p>Monitorização e gestão do campus</p>
+        </header>
+
+        <section class="summary-grid" aria-label="Resumo do campus">
+          <article class="summary-card danger">
+            <div class="summary-title">
+              <svg aria-hidden="true"><use href="#icon-warning"></use></svg>
+              <h2>Alertas Ativos</h2>
+            </div>
+            <strong class="summary-value">3</strong>
+            <p class="summary-description">Requerem atenção</p>
+          </article>
+
+          <article class="summary-card energy">
+            <div class="summary-title">
+              <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+              <h2>Consumo Energético</h2>
+            </div>
+            <strong class="summary-value">2.4 MW</strong>
+            <p class="summary-description decrease">
+              <svg aria-hidden="true"><use href="#icon-trending-down"></use></svg>
+              -12% vs ontem
+            </p>
+          </article>
+
+          <article class="summary-card sensors">
+            <div class="summary-title">
+              <svg aria-hidden="true"><use href="#icon-thermometer"></use></svg>
+              <h2>Sensores Ativos</h2>
+            </div>
+            <strong class="summary-value">9,847</strong>
+            <p class="summary-description">De 10,000 sensores</p>
+          </article>
+
+          <article class="summary-card humidity">
+            <div class="summary-title">
+              <svg aria-hidden="true"><use href="#icon-droplets"></use></svg>
+              <h2>Humidade Média</h2>
+            </div>
+            <strong class="summary-value">58%</strong>
+            <p class="summary-description">Nível adequado</p>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel alerts-panel">
+            <header class="panel-heading">
+              <h2>Alertas de Sensores</h2>
+              <p>Situações que requerem atenção</p>
+            </header>
+
+            <div class="alerts-list">
+              <section class="alert-item critical">
+                <svg aria-hidden="true"><use href="#icon-warning"></use></svg>
+                <div>
+                  <h3>CO₂ elevado - Sala 305</h3>
+                  <p>Edifício B, Piso 3 - 850 ppm</p>
+                  <span>Crítico</span>
+                </div>
+              </section>
+              <section class="alert-item warning">
+                <svg aria-hidden="true"><use href="#icon-warning"></use></svg>
+                <div>
+                  <h3>Temperatura alta - Lab 2</h3>
+                  <p>Edifício C - 28°C</p>
+                  <span>Aviso</span>
+                </div>
+              </section>
+              <section class="alert-item warning">
+                <svg aria-hidden="true"><use href="#icon-warning"></use></svg>
+                <div>
+                  <h3>Sensor offline - E-A-201-T</h3>
+                  <p>Edifício A, Sala 201</p>
+                  <span>Aviso</span>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="panel consumption-panel">
+            <header class="panel-heading">
+              <h2>Consumo por Edifício</h2>
+              <p>Consumo energético atual (kW)</p>
+            </header>
+
+            <div class="buildings-list">
+              <section class="building-item">
+                <div class="building-heading">
+                  <div>
+                    <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+                    <h3>Edifício A</h3>
+                  </div>
+                  <strong>890 kW</strong>
+                </div>
+                <span class="progress-track"><span class="progress-value progress-74"></span></span>
+              </section>
+              <section class="building-item">
+                <div class="building-heading">
+                  <div>
+                    <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+                    <h3>Edifício B</h3>
+                  </div>
+                  <strong>650 kW</strong>
+                </div>
+                <span class="progress-track"><span class="progress-value progress-54"></span></span>
+              </section>
+              <section class="building-item">
+                <div class="building-heading">
+                  <div>
+                    <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+                    <h3>Edifício C</h3>
+                  </div>
+                  <strong>420 kW</strong>
+                </div>
+                <span class="progress-track"><span class="progress-value progress-35"></span></span>
+              </section>
+              <section class="building-item">
+                <div class="building-heading">
+                  <div>
+                    <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+                    <h3>Biblioteca</h3>
+                  </div>
+                  <strong>320 kW</strong>
+                </div>
+                <span class="progress-track"><span class="progress-value progress-27"></span></span>
+              </section>
+              <section class="building-item">
+                <div class="building-heading">
+                  <div>
+                    <svg aria-hidden="true"><use href="#icon-bolt"></use></svg>
+                    <h3>Laboratórios</h3>
+                  </div>
+                  <strong>120 kW</strong>
+                </div>
+                <span class="progress-track"><span class="progress-value progress-10"></span></span>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <section class="notifications-popover" data-notifications-panel aria-label="Notificações">
+      <svg aria-hidden="true"><use href="#icon-bell"></use></svg>
+      <strong>Notificações</strong>
+      <span class="popover-dot"></span>
+    </section>
+
+    <script src="../../assets/js/dashboard.js"></script>
+  </body>
+</html>
+
+

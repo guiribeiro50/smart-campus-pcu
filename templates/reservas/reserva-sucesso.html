@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+</head>
+  <body>
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <div class="modal-icon-wrap" style="background: #16a34a15">
+          <i data-lucide="check-circle" style="color: #16a34a"></i>
+        </div>
+        <div>
+          <h3 class="modal-title">Reserva Confirmada!</h3>
+          <p class="modal-sub" id="success-sub-text">Reservada com sucesso</p>
+        </div>
+      </div>
+      <button class="modal-close" onclick="fecharModalBtn()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="modal-success">
+      <div class="success-details">
+        <div class="success-row">
+          <i data-lucide="calendar" style="color: #6b7280"></i>
+          <span id="success-data">--/--/----</span>
+        </div>
+        <div class="success-row">
+          <i data-lucide="clock" style="color: #6b7280"></i>
+          <span id="success-horas">00:00 – 00:00</span>
+        </div>
+        <div class="success-row">
+          <i id="success-vehicle-icon" data-lucide="placeholder"></i>
+          <span id="success-vehicle-text">Veículo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        class="btn-confirm"
+        style="background: #16a34a; width: 100%"
+        onclick="fecharModalBtn()"
+      >
+        Fechar
+      </button>
+    </div>
+  </body>
+</html>
+

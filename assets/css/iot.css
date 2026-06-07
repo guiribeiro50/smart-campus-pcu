@@ -1,0 +1,162 @@
+
+.iot-page {
+  background: #f3f4f6;
+}
+
+.page-header-flex {
+  align-items: flex-start;
+}
+
+.refresh-readings-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #1a2e4a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.refresh-readings-button:hover {
+  background: #243d5e;
+}
+
+.refresh-readings-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.filters-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+
+.filters-card h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.filters-card .filters-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sensor-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.sensor-card header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.sensor-card h3 {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sensor-card header > div p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sensor-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #eff6ff;
+  color: #1a2e4a;
+  flex-shrink: 0;
+}
+
+.sensor-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.status {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status.normal { background: #dcfce7; color: #166534; }
+.status.warning { background: #fef3c7; color: #b45309; }
+.status.critical { background: #fee2e2; color: #b91c1c; }
+
+.sensor-card .value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.sensor-card .value small {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.sensor-card p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.sensor-card small {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.sensor-card.hidden {
+  display: none;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+@media (max-width: 1100px) {
+  .sensor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sensor-grid,
+  .filters-card .filters-grid {
+    grid-template-columns: 1fr;
+  }
+}

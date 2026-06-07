@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="modal-header">
+      <div class="modal-title-row">
+        <div class="modal-icon-wrap" style="background: #0f274415">
+          <i data-lucide="car" style="color: #0f2744"></i>
+        </div>
+        <div>
+          <h3 class="modal-title">Estacionamento Disponível</h3>
+          <p class="modal-sub" id="est-zona-nome">Zona selecionada</p>
+        </div>
+      </div>
+      <button class="modal-close" onclick="fecharModalBtn()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="modal-est">
+      <div id="est-lista" class="est-lista">
+      </div>
+      <p id="est-vazio" class="est-vazio" style="display:none">
+        Não há lugares registados nesta zona.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-confirm" style="background: #0f2744; width: 100%" onclick="fecharModalBtn()">
+        Fechar
+      </button>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustentabilidade | PCU - UPT</title>
+  <link rel="stylesheet" href="../../assets/css/sustentabilidade.css">
+</head>
+
+<body>
+  <!-- Ícones internos: funcionam sem JavaScript -->
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="building" viewBox="0 0 24 24">
+      <path d="M5 21V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5V21"/>
+      <path d="M15 9h3a1 1 0 0 1 1 1v11M3 21h18M8 8h4M8 12h4M8 16h4"/>
+    </symbol>
+    <symbol id="grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1"/>
+      <rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/>
+      <rect x="14" y="14" width="7" height="7" rx="1"/>
+    </symbol>
+    <symbol id="wifi" viewBox="0 0 24 24">
+      <path d="M5 10a10 10 0 0 1 14 0M8.5 13.5a5 5 0 0 1 7 0M12 17h.01"/>
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="17" rx="2"/>
+      <path d="M7 2v4M17 2v4M3 9h18"/>
+    </symbol>
+    <symbol id="pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 24 24">
+      <path d="M20 4C11 4 5 8 5 13a5 5 0 0 0 6 5c5-1 8-6 9-14Z"/>
+      <path d="M4 21c2-5 6-8 12-10"/>
+    </symbol>
+    <symbol id="shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="plus" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M12 8v8M8 12h8"/>
+    </symbol>
+    <symbol id="users" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-4M16 3a4 4 0 0 1 0 8"/>
+    </symbol>
+    <symbol id="gauge" viewBox="0 0 24 24">
+      <path d="M4 18a8 8 0 1 1 16 0M12 14l3-4M12 18h.01"/>
+    </symbol>
+    <symbol id="terminal" viewBox="0 0 24 24">
+      <path d="m4 17 6-5-6-5M12 19h8"/>
+    </symbol>
+    <symbol id="logout" viewBox="0 0 24 24">
+      <path d="M10 17l5-5-5-5M15 12H3M21 19V5a2 2 0 0 0-2-2h-6"/>
+    </symbol>
+    <symbol id="bell" viewBox="0 0 24 24">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M14 21h-4"/>
+    </symbol>
+    <symbol id="bolt" viewBox="0 0 24 24">
+      <path d="m13 2-9 12h8l-1 8 9-12h-8l1-8Z"/>
+    </symbol>
+    <symbol id="droplets" viewBox="0 0 24 24">
+      <path d="M8 3s-4 4-4 7a4 4 0 0 0 7 2M15 2s5 6 5 10a5 5 0 0 1-10 0"/>
+    </symbol>
+    <symbol id="tree" viewBox="0 0 24 24">
+      <path d="m12 2 4 6h-2l4 6h-5v7h-2v-7H6l4-6H8l4-6Z"/>
+    </symbol>
+    <symbol id="medal" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="5"/>
+      <path d="m8.5 12-1 9 4.5-3 4.5 3-1-9"/>
+    </symbol>
+    <symbol id="trend-down" viewBox="0 0 24 24">
+      <path d="m3 7 6 6 4-4 8 8M15 17h6v-6"/>
+    </symbol>
+  </svg>
+
+  <aside class="sidebar">
+    <header class="brand">
+      <span class="brand-icon"><svg class="icon"><use href="#building"></use></svg></span>
+      <div>
+        <strong>PCU - UPT</strong>
+        <small>Campus Inteligente</small>
+      </div>
+    </header>
+
+    <nav>
+      <h2>Menu Principal</h2>
+      <a href="../../dashboard.php"><svg class="icon"><use href="#grid"></use></svg>Dashboard</a>
+      <a href="../../monitorizacao.php"><svg class="icon"><use href="#wifi"></use></svg>Monitorização IoT</a>
+      <a href="#"><svg class="icon"><use href="#calendar"></use></svg>Reservas</a>
+      <a href="#"><svg class="icon"><use href="#pin"></use></svg>Mobilidade</a>
+      <a class="active" href="../../sustentabilidade.php"><svg class="icon"><use href="#leaf"></use></svg>Sustentabilidade</a>
+
+      <h2 class="admin-title">Administração</h2>
+      <a href="#"><svg class="icon"><use href="#shield"></use></svg>Controlo de Acessos</a>
+      <a href="#"><svg class="icon"><use href="#plus"></use></svg>Registar Espaço</a>
+      <a href="#"><svg class="icon"><use href="#users"></use></svg>Gestão Utilizadores</a>
+      <a href="#"><svg class="icon"><use href="#gauge"></use></svg>Gestão Sensores</a>
+      <a href="#"><svg class="icon"><use href="#terminal"></use></svg>Terminal LSS</a>
+    </nav>
+
+    <footer class="sidebar-footer">
+      <div class="profile">
+        <span class="avatar">A</span>
+        <div>
+          <strong>Administrador Sistema</strong>
+          <small>admin@upt.pt</small>
+        </div>
+      </div>
+      <span class="role">Administrador</span>
+      <a class="logout" href="../../login.php"><svg class="icon"><use href="#logout"></use></svg>Sair</a>
+    </footer>
+  </aside>
+
+  <main class="app">
+    <header class="topbar">
+      <svg class="icon"><use href="#bell"></use></svg>
+      <span class="dot"></span>
+    </header>
+
+    <div class="content">
+      <header class="heading">
+        <h1>Relatórios de Sustentabilidade</h1>
+        <p>Análise de eficiência energética e impacto ambiental</p>
+      </header>
+
+      <section class="summary-grid">
+        <article class="summary-card">
+          <header><svg class="icon orange"><use href="#bolt"></use></svg><h2>Poupança Energética</h2></header>
+          <strong class="green">-18%</strong>
+          <p class="green"><svg class="icon"><use href="#trend-down"></use></svg>800 kWh poupados/mês</p>
+        </article>
+
+        <article class="summary-card">
+          <header><svg class="icon green"><use href="#leaf"></use></svg><h2>Redução CO₂</h2></header>
+          <strong class="green">-29%</strong>
+          <p class="green"><svg class="icon"><use href="#trend-down"></use></svg>140 ton/mês</p>
+        </article>
+
+        <article class="summary-card">
+          <header><svg class="icon blue"><use href="#droplets"></use></svg><h2>Poupança de Água</h2></header>
+          <strong class="blue">-25%</strong>
+          <p class="blue"><svg class="icon"><use href="#trend-down"></use></svg>850 m³/mês</p>
+        </article>
+
+        <article class="summary-card">
+          <header><svg class="icon dark-green"><use href="#tree"></use></svg><h2>Árvores Equivalentes</h2></header>
+          <strong class="dark-green">2,847</strong>
+          <p>CO₂ absorvido equivalente</p>
+        </article>
+      </section>
+
+      <section class="goals">
+        <h2><svg class="icon orange"><use href="#medal"></use></svg>Metas de Sustentabilidade 2026</h2>
+
+        <div class="goals-grid">
+          <article class="goal green-goal">
+            <span class="goal-icon"><svg class="icon"><use href="#medal"></use></svg></span>
+            <div>
+              <h3>Meta Energética</h3>
+              <p>-20% até Dezembro</p>
+              <span>90% Atingido</span>
+            </div>
+          </article>
+
+          <article class="goal blue-goal">
+            <span class="goal-icon"><svg class="icon"><use href="#medal"></use></svg></span>
+            <div>
+              <h3>Meta Carbono</h3>
+              <p>Neutralidade 2030</p>
+              <span>Em Progresso</span>
+            </div>
+          </article>
+
+          <article class="goal yellow-goal">
+            <span class="goal-icon"><svg class="icon"><use href="#medal"></use></svg></span>
+            <div>
+              <h3>Certificação ISO</h3>
+              <p>ISO 14001:2026</p>
+              <span>Candidatura Ativa</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="tabs">
+        <span class="active">Energia</span>
+        <span>Carbono</span>
+        <span>Água</span>
+      </div>
+
+      <section class="chart-card">
+        <h2>Evolução do Consumo Energético</h2>
+        <p>Consumo mensal e poupança acumulada (kWh)</p>
+
+        <svg class="line-chart" viewBox="0 0 1000 410" aria-label="Gráfico de consumo energético">
+          <g class="grid-lines">
+            <line x1="75" y1="30" x2="965" y2="30"/>
+            <line x1="75" y1="125" x2="965" y2="125"/>
+            <line x1="75" y1="220" x2="965" y2="220"/>
+            <line x1="75" y1="315" x2="965" y2="315"/>
+            <line x1="75" y1="30" x2="75" y2="315"/>
+            <line x1="253" y1="30" x2="253" y2="315"/>
+            <line x1="431" y1="30" x2="431" y2="315"/>
+            <line x1="609" y1="30" x2="609" y2="315"/>
+            <line x1="787" y1="30" x2="787" y2="315"/>
+            <line x1="965" y1="30" x2="965" y2="315"/>
+          </g>
+
+          <g class="axis">
+            <line x1="75" y1="30" x2="75" y2="315"/>
+            <line x1="75" y1="315" x2="965" y2="315"/>
+          </g>
+
+          <g class="chart-labels">
+            <text x="15" y="38">2800</text>
+            <text x="15" y="133">2100</text>
+            <text x="15" y="228">1400</text>
+            <text x="30" y="323">700</text>
+
+            <text x="60" y="350">Jan</text>
+            <text x="238" y="350">Fev</text>
+            <text x="416" y="350">Mar</text>
+            <text x="594" y="350">Abr</text>
+            <text x="772" y="350">Mai</text>
+            <text x="950" y="350">Jun</text>
+          </g>
+
+          <polyline class="saving-line" points="75,30 253,50 431,70 609,84 787,98 965,112"/>
+          <g class="saving-points">
+            <circle cx="75" cy="30" r="5"/>
+            <circle cx="253" cy="50" r="5"/>
+            <circle cx="431" cy="70" r="5"/>
+            <circle cx="609" cy="84" r="5"/>
+            <circle cx="787" cy="98" r="5"/>
+            <circle cx="965" cy="112" r="5"/>
+          </g>
+        </svg>
+
+        <div class="legend">
+          <span class="navy-line"></span>Consumo (kWh)
+          <span class="green-line"></span>Poupança (kWh)
+        </div>
+      </section>
+
+      <section class="analysis-grid">
+        <article class="period-card">
+          <h2>Consumo por Período</h2>
+
+          <div class="bar-chart">
+            <div class="scale">
+              <span>2800</span><span>2100</span><span>1400</span><span>700</span><span>0</span>
+            </div>
+            <div class="bars">
+              <div><span style="height:100%"></span><small>Jan</small></div>
+              <div><span style="height:94%"></span><small>Fev</small></div>
+              <div><span style="height:88%"></span><small>Mar</small></div>
+              <div><span style="height:82%"></span><small>Abr</small></div>
+              <div><span style="height:77%"></span><small>Mai</small></div>
+              <div><span style="height:72%"></span><small>Jun</small></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="trend-card">
+          <h2>Análise de Tendência</h2>
+
+          <div class="trend-title">
+            <strong>Tendência Geral</strong>
+            <span><svg class="icon"><use href="#trend-down"></use></svg>Decrescente</span>
+          </div>
+
+          <p>O consumo tem diminuído consistentemente nos últimos 6 meses, com uma redução média de 3% ao mês.</p>
+
+          <h3>Principais Fatores:</h3>
+          <ul>
+            <li>Otimização do sistema AVAC</li>
+            <li>Instalação de iluminação LED</li>
+            <li>Sensores de presença em salas</li>
+            <li>Consciencialização da comunidade</li>
+          </ul>
+
+          <div class="projection">
+            <strong>Projeção Anual</strong>
+            <p>Com a tendência atual, estima-se uma poupança de 9.600 kWh até ao final do ano.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <aside class="toast">
+    <svg class="icon"><use href="#bell"></use></svg>
+    <strong>Notificações</strong>
+    <span class="red-count">2</span>
+    <span class="yellow-count">3</span>
+    <svg class="icon"><use href="#bell"></use></svg>
+  </aside>
+</body>
+</html>
+
+
