@@ -353,7 +353,6 @@ CREATE TABLE `reserva` (
 --
 
 INSERT INTO `reserva` (`id`, `utilizador_id`, `tipo_recurso`, `recurso_id`, `data_inicio`, `data_fim`, `finalidade`, `estado`) VALUES
-(10, 11, 'sala', 5, '2026-06-07 02:18:00', '2026-06-07 02:19:00', 'pinar a luana', 'expirada'),
 (11, 1, 'sala', 5, '2026-06-07 12:55:00', '2026-06-07 12:56:00', 'Aula', 'expirada'),
 (12, 11, 'sala', 8, '2026-06-07 12:57:00', '2026-06-07 12:58:00', '', 'expirada'),
 (13, 11, 'sala', 5, '2026-06-07 13:22:00', '2026-06-07 13:23:00', '', 'expirada'),
@@ -491,8 +490,6 @@ INSERT INTO `utilizador` (`id`, `nome`, `email`, `login`, `password`, `perfil`, 
 (1, 'Administrador Sistema', 'gcostaribeiro2006@gmail.com', 'admin@upt.pt', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'administrador', 1, '2026-06-04 00:22:05'),
 (11, 'Henrique Ricardo', 'gcostaribeiro20@gmail.com', 'ricardo@upt.pt', '$2y$10$H4wQSDv59Q3pdmTsKxDLNuCi8SfW96XZoOcJx3/5qb0hR6DTXIFqC', 'estudante', 1, '2026-06-07 01:08:45'),
 (12, 'Alexandre Veiga', 'veiga1196@gmail.com', 'veiga@upt.pt', '$2y$10$zBzeXJdzHtH8UdbKNmVFV.Bam68kNgucowxvUhwN.DhKPGADpqxGu', 'docente', 1, '2026-06-07 01:09:13'),
-(13, 'João Xavier', 'gcostaribeiroo20@gmail.com', 'rato@upt.pt', '$2y$10$1LZntV6DvXtBQ2thTtK06ec9OqG6X9ibObxFdV8UV0xatYPvOkLD6', 'funcionario_administrativo', 1, '2026-06-07 01:09:58');
-
 -- --------------------------------------------------------
 
 --
